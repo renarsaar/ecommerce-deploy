@@ -105,7 +105,7 @@ export default function ProductShow({ match, location }) {
   }
 
   // Handle product quantity
-  function handleQuantity(e) {
+  function HandleQuantity(e) {
     useRippleButton(e);
 
     const { value } = e.target;
@@ -270,7 +270,7 @@ export default function ProductShow({ match, location }) {
                 type="button"
                 value="decrement"
                 className="decrement"
-                onClick={handleQuantity}
+                onClick={HandleQuantity}
               >
                 -
               </button>
@@ -279,7 +279,7 @@ export default function ProductShow({ match, location }) {
                 type="button"
                 value="increment"
                 className="increment"
-                onClick={handleQuantity}
+                onClick={HandleQuantity}
               >
                 +
               </button>
