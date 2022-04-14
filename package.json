@@ -13,7 +13,7 @@
     "heroku-postbuild": "npm run install-client && npm run build"
   },
   "engines": {
-    "node": "13.7.0"
+    "node": "16.13.2"
   },
   "keywords": [],
   "author": "Renar Saaremets <renar.saaremets@gmail.com>",
