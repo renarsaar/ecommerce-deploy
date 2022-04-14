@@ -13,6 +13,7 @@
     "heroku-postbuild": "npm run install-client && npm run build"
   },
   "engines": {
+    "start": "node server.js",
     "node": "16.13.2"
   },
   "keywords": [],
