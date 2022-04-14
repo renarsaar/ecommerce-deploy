@@ -14,7 +14,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(express.static('./client/build'));
 
 app.use('/uploads', express.static('uploads'));
 
@@ -25,10 +25,6 @@ app.use('/parcels', require('./routes/parcels'));
 app.use('/auth', require('./routes/auth'));
 app.use('/reviews', require('./routes/reviews'));
 app.use('/contact', require('./routes/contact'));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-});
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
