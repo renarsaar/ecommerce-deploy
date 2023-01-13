@@ -51,7 +51,7 @@ export default function Product({ product }) {
 
   return (
     <div className="product-list-item">
-      <img src={`http://localhost:8080/${image}`} alt={name} />
+      <img src={`https://vra-ecommerce.onrender.com/${image}`} alt={name} />
 
       {newProduct()}
       {discountAmount()}
