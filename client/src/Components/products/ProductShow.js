@@ -193,7 +193,7 @@ export default function ProductShow({ match, location }) {
     return (
       <div className="product-show flex">
         <div className="gallery">
-          <img src={`http://localhost:8080/${image}`} alt={name} />
+          <img src={`https://vra-ecommerce.onrender.com/${image}`} alt={name} />
 
           <div className="share mb-2">
             <h4 className="mr-1 grey">Share this product</h4>
