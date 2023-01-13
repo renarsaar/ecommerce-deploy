@@ -31,7 +31,7 @@ export default function FormCartProducts({ values, nextStep, handleCartTotalPric
 
       return (
         <div key={key} className="cart-products flex">
-          <img src={`http://localhost:8080/${image}`} alt={key} />
+          <img src={`https://vra-ecommerce.onrender.com/${image}`} alt={key} />
 
           <Link to={`/products/${id}`} className="cart-products-info">
             <h2>{name}</h2>
