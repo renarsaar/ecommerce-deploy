@@ -99,7 +99,7 @@ router.get('/google', async (req, res) => {
 // @access public
 router.get('/google/callback', async (req, res) => {
   // Acquire the code from the querystring
-  const qs = new url.URL(req.url, 'http://localhost:8080').searchParams;
+  const qs = new url.URL(req.url, 'https://vra-ecommerce.onrender.com').searchParams;
   const code = qs.get('code');
 
   // Acquire tokens with code & set the credentials on the OAuth2 client
@@ -122,7 +122,7 @@ router.get('/google/callback', async (req, res) => {
 
   // If user without googleId exists in database, verify
   if (user && !user.googleId) {
-    const pathName = 'http://localhost:3000/account/validation';
+    const pathName = 'https://vra-ecommerce.onrender.com/account/validation';
     const query = `?userId=${user._id}&googleId=${userGoogleId}&email=${userEmail}&name=${userName}`;
 
     return res.redirect(302, `${pathName}/${query}`);
@@ -133,7 +133,7 @@ router.get('/google/callback', async (req, res) => {
     // Create and assign jwt token
     const token = jwt.sign({ _id: user._id }, process.env.JWT_TOKEN_SECRET);
 
-    const pathName = 'http://localhost:3000';
+    const pathName = 'https://vra-ecommerce.onrender.com';
     const query = `?token=${token}`;
 
     // Log user in, redirect to /
@@ -170,7 +170,7 @@ router.get('/google/callback', async (req, res) => {
       // Create and assign jwt token
       const token = jwt.sign({ _id: user._id }, process.env.JWT_TOKEN_SECRET);
 
-      const pathName = 'http://localhost:3000';
+      const pathName = 'https://vra-ecommerce.onrender.com';
       const query = `?token=${token}`;
 
       // Log user in, redirect to /
@@ -430,7 +430,7 @@ router.post('/reset/password', async (req, res) => {
   });
 
   // Send email to user
-  const link = `http://localhost:3000/account/reset_password_confirm?token=${resetToken}&id=${user._id}`;
+  const link = `https://vra-ecommerce.onrender.com/account/reset_password_confirm?token=${resetToken}&id=${user._id}`;
   const output = `
     <div style="padding:1.5rem 1rem; background: rgba(255, 96, 10, 0.2); color: black;">
       <h3 style="font-size: 1.5rem;">Password Reset</h3>
