@@ -64,7 +64,7 @@ export default function OrderShow({ match }) {
                   <h3>{product.totalPrice} €</h3>
                 </div>
 
-                <img src={`http://localhost:8080/${product.image}`} alt={product.name} />
+                <img src={`https://vra-ecommerce.onrender.com/${product.image}`} alt={product.name} />
               </Link>
             ))}
 
